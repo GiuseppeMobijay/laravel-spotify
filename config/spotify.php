@@ -4,43 +4,32 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | API Base URL
+    | Spotify API URL
     |--------------------------------------------------------------------------
-    |
-    | Here you may define the base URL of the Spotify API.
-    |
     */
-
     'api_url' => env('SPOTIFY_API_URL', 'https://api.spotify.com/v1'),
 
     /*
     |--------------------------------------------------------------------------
-    | Authentication
+    | Spotify API Credentials
     |--------------------------------------------------------------------------
-    |
-    | The Client ID and Client Secret of your Spotify App.
-    |
     */
-
-    'auth' => [
-        'client_id' => env('SPOTIFY_CLIENT_ID'),
-        'client_secret' => env('SPOTIFY_CLIENT_SECRET'),
-    ],
+    'client_id' => env('SPOTIFY_CLIENT_ID'),
+    'client_secret' => env('SPOTIFY_CLIENT_SECRET'),
+    'redirect_uri' => env('SPOTIFY_REDIRECT_URI'),
 
     /*
     |--------------------------------------------------------------------------
-    | Default Config
+    | API Logging
     |--------------------------------------------------------------------------
-    |
-    | You may define a default country, locale and market that will be used
-    | for your Spotify API requests.
-    |
+    | Enable logging of API requests and responses
     */
-
-    'default_config' => [
-        'country' => null,
-        'locale' => null,
-        'market' => null,
+    'logging' => [
+        'enabled' => env('SPOTIFY_LOGGING_ENABLED', false),
+        'channel' => env('SPOTIFY_LOG_CHANNEL', 'single'),
+        'level' => env('SPOTIFY_LOG_LEVEL', 'info'),
+        'log_request_body' => env('SPOTIFY_LOG_REQUEST_BODY', true),
+        'log_response_body' => env('SPOTIFY_LOG_RESPONSE_BODY', true),
     ],
 
 ];

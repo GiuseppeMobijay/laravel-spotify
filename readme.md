@@ -43,7 +43,7 @@ composer require aerni/laravel-spotify
 Publish the config of the package.
 
 ```bash
-php artisan vendor:publish --provider="Aerni\Spotify\Providers\SpotifyServiceProvider"
+php artisan vendor:publish --provider="Aerni\Spotify\SpotifyServiceProvider"
 ```
 
 The following config will be published to `config/spotify.php`.
@@ -298,4 +298,16 @@ Run the tests like this:
 
 ```bash
 vendor/bin/phpunit
+```
+
+## API Logging
+
+This library supports logging of API calls to Spotify. To enable it, configure the following environment variables:
+
+```env
+SPOTIFY_LOGGING_ENABLED=true
+SPOTIFY_LOG_CHANNEL=single  # or 'stack', 'daily', etc.
+SPOTIFY_LOG_LEVEL=info      # debug, info, warning, error, etc.
+SPOTIFY_LOG_REQUEST_BODY=true
+SPOTIFY_LOG_RESPONSE_BODY=true
 ```
