@@ -27,7 +27,11 @@ class SpotifyServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(SpotifyClient::class, function () {
-            return new SpotifyClient;
+            $spotifyClient = new SpotifyClient([
+                'http_errors' => config('spotify.exception_on_http_errors', false),
+            ]);
+
+            return $spotifyClient;
         });
 
         $this->app->bind(SpotifyRequest::class, function () {

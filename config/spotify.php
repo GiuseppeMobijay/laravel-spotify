@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'api_url' => env('SPOTIFY_API_URL', 'https://api.spotify.com/v1'),
-
+    'exception_on_http_errors' => env('SPOTIFY_EXCEPTION_ON_HTTP_ERRORS', false),
     /*
     |--------------------------------------------------------------------------
     | Spotify API Credentials
