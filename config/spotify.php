@@ -14,10 +14,16 @@ return [
     | Spotify API Credentials
     |--------------------------------------------------------------------------
     */
-    'client_id' => env('SPOTIFY_CLIENT_ID'),
-    'client_secret' => env('SPOTIFY_CLIENT_SECRET'),
-    'redirect_uri' => env('SPOTIFY_REDIRECT_URI'),
+    'auth' => [
+        'client_id' => env('SPOTIFY_CLIENT_ID'),
+        'client_secret' => env('SPOTIFY_CLIENT_SECRET'),
+    ],
 
+    'default_config' => [
+        'country' => null,
+        'locale' => null,
+        'market' => null,
+    ],
     /*
     |--------------------------------------------------------------------------
     | API Logging

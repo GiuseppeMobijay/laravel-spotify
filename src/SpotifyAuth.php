@@ -28,6 +28,7 @@ class SpotifyAuth
      */
     private function generateAccessToken(): void
     {
+
         try {
             $response = SpotifyClient::post(self::SPOTIFY_API_TOKEN_URL, [
                 'headers' => [
